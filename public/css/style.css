@@ -1,0 +1,13 @@
+:root {
+	--rotation: 0deg;
+}
+.wind-direction {
+	display: inline-block;
+	position: relative;
+	width: 1em;
+	height: 1em;
+	padding: 0;
+	top: .5em;
+	margin: 0;
+	transform: rotate(var(--rotation));
+}
