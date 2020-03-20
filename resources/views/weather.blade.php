@@ -1,5 +1,8 @@
 @extends('layout')
 @section('content')
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+    </ol>
     <div class="panel panel-default">
         <div class="panel-body">
             <h1>Брянск</h1>

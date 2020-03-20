@@ -5,15 +5,22 @@ namespace App\Http\Controllers;
 use App\Services\WeatherService;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+/**
+ * Class WeatherController
+ *
+ * @package App\Http\Controllers
+ *
+ * @author Aleksandr Gavva
+ */
+class WeatherController extends Controller
 {
     /**
      * @var WeatherService
      */
-    var $weatherService;
+    private $weatherService;
 
     /**
-     * TestController constructor.
+     * WeatherController constructor
      */
     public function __construct(WeatherService $weatherService)
     {
@@ -21,6 +28,8 @@ class TestController extends Controller
     }
 
     /**
+     * Погода в городе
+     *
      * @return string
      */
     public function weather($id)

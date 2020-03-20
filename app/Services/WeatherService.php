@@ -32,7 +32,7 @@ class WeatherService
     private $cache;
 
     /**
-     * WeatherService constructor.
+     * WeatherService constructor
      *
      * @param WeatherRepositoryInterface $weatherRepository
      * @param Cache $cache
@@ -46,15 +46,8 @@ class WeatherService
     }
 
     /**
-     * @param $id
-     * @return string
-     */
-    private function getCacheKeyByCity($id)
-    {
-        return self::CACHE_PREFIX . $id;
-    }
-
-    /**
+     * Получить погоду по городу
+     *
      * @param int $id
      * @return WeatherDTOInterface
      */
@@ -63,5 +56,14 @@ class WeatherService
         return $this->cache->remember($this->getCacheKeyByCity($id), self::CACHE_TIME, function () use ($id) {
             return $this->repository->getByCity($id);
         });
+    }
+
+    /**
+     * @param $id
+     * @return string
+     */
+    private function getCacheKeyByCity($id)
+    {
+        return self::CACHE_PREFIX . $id;
     }
 }
